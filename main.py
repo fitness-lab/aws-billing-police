@@ -54,7 +54,7 @@ def lambda_handler(event, context):
             value = round(Decimal(group["Metrics"]["UnblendedCost"]["Amount"]) * 110, 0)
             # Because of the large amount of information, items under 2 yen have been omitted.
             # If you want to use something other than Japanese yen, please correct this.
-            if value >= 2:
+            if value >= 0.5:
                 print(value)
                 fields.append({
                     "title": group["Keys"][0],
@@ -66,7 +66,7 @@ def lambda_handler(event, context):
             else:
                 # If you want to use something other than Japanese yen, please correct this.
                 logger.info("Event: %s is under 1 yen", group["Keys"][0])
-    
+
     # If you want to use something other than Japanese yen, please modify the pretext.
     slack_message = {
         "attachments": [

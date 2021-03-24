@@ -1,2 +1,2 @@
-SLACK_CHANNEL: "#channel"
-AWS_ACCOUNT_NAME: "prod"
+SLACK_CHANNEL: "#aws-billing"
+AWS_ACCOUNT_NAME: "fitnesslab"
