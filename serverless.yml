@@ -1,4 +1,4 @@
-service: billing2slack
+service: billingNotificate2Slack
 
 provider:
   name: aws

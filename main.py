@@ -73,16 +73,10 @@ def lambda_handler(event, context):
             {
                 'fallback'   : "Required plain-text summary of the attachment.",
                 'color'      : "#36a64f",
-                'author_name': ":male-police-officer: :moneybag: Billing 警察",
-                'author_link': "http://flickr.com/bobby/",
-                'author_icon': "http://flickr.com/icons/bobby.jpg",
+                'author_name': ":male-police-officer:",
                 'text'       : " ",
                 'fields'     : fields,
-                'image_url'  : "http://my-website.com/path/to/image.jpg",
-                'thumb_url'  : "http://example.com/path/to/thumb.png",
-                'footer'     : "Powered by on %s Virginia Lambda" % (str(AWS_ACCOUNT_NAME)),
-                'footer_icon': "https://platform.slack-edge.com/img/default_application_icon.png",
-                'pretext'    : "* %s の [ %s ] のAWS利用料 は :money_with_wings: %s 円です*" % (str(start), str(AWS_ACCOUNT_NAME), str("{:,}".format(round(total * 110, 0)))),
+                'pretext'    : "* %s の AWS利用料 は %s 円です*" % (str(start), str("{:,}".format(round(total * 110, 0)))),
                 'channel'    : SLACK_CHANNEL
             }
         ]
